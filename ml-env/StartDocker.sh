@@ -2,7 +2,7 @@ echo Update and Upgrade OS
 
 sudo apt-get update && sudo apt-get upgrade -y
 
-echo Prerequisites for Docker
+echo Docker Prerequisites
 
 sudo apt-get install \
     apt-transport-https \
