@@ -1,4 +1,4 @@
-echo Update & Upgrade
+echo Update and Upgrade OS
 
 sudo apt-get update && sudo apt-get upgrade -y
 
