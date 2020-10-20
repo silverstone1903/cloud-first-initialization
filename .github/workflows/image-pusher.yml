@@ -10,9 +10,8 @@ jobs:
     - name: Login to Github Docker Registry
       env: 
         github_password: ${{ secrets.GITHUB_PASSWORD }}
-      # run: docker login docker.pkg.github.com -u silverstone1903 -p $github_password 
+      run: docker login docker.pkg.github.com -u ${{ github.repostitory }} -p $github_password 
       # run: docker login -u ${{ github.repostitory }} -p ${{ secrets.GITHUB_TOKEN }}   
-        run: echo ${{ secrets.DOCKERHUB_TOKEN }} | docker login -u ${{ secrets.DOCKERHUB_USER }} --password-stdin
     - name: Build the Base Docker image
       run: docker build . --file pythonr/base/Dockerfile --tag docker.pkg.github.com/${GITHUB_REPOSITORY}/base:${GITHUB_SHA} --tag docker.pkg.github.com/${GITHUB_REPOSITORY}/base:latest
     - name: Push Base Image To Registry
