@@ -1,0 +1,17 @@
+name: docker-image-pusher
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Login to Github Docker Registry
+      env: 
+        github_password: ${{ secrets.GITHUB_PASSWORD }}
+      run: docker login docker.pkg.github.com --username silverstone1903 --password $github_password    
+    - name: Build the Base Docker image
+      run: docker build . --file pythonr/base/Dockerfile --tag docker.pkg.github.com/${GITHUB_REPOSITORY}/base:${GITHUB_SHA} --tag docker.pkg.github.com/${GITHUB_REPOSITORY}/base:latest
+    - name: Push Base Image To Registry
+      run: docker push docker.pkg.github.com/${GITHUB_REPOSITORY}/base:${GITHUB_SHA} && docker push docker.pkg.github.com/${GITHUB_REPOSITORY}/base:latest
