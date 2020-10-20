@@ -29,6 +29,6 @@ jobs:
         with:
           context: .
           file: pythonr/base/Dockerfile
-          platforms: linux/amd64,linux/arm64,linux/386
+          # platforms: linux/amd64,linux/arm64,linux/386
           push: true
           tags: silverstone1903/pythonr:latest
