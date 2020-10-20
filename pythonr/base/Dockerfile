@@ -7,11 +7,11 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 RUN apt-get update && apt-get install -y  build-essential r-base r-base-dev python3.6 python3-pip python3-setuptools python3-dev nano libcurl4-openssl-dev libssl-dev libxml2-dev pandoc git
 
-COPY . ./
-WORKDIR pythonr/base/
+COPY ./pythonr/base ./app
+WORKDIR app/
 RUN ls
 
 RUN pip3 install -r requirements.txt
-RUN Rscript /app/rpackages_installer.R
+RUN Rscript rpackages_installer.R
 
 CMD ["/bin/bash"]
