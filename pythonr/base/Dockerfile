@@ -12,6 +12,6 @@ WORKDIR app/
 RUN ls
 
 RUN pip3 install -r requirements.txt
-# RUN Rscript rpackages_installer.R
+RUN Rscript rpackages_installer.R
 
 CMD ["/bin/bash"]
