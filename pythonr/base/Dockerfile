@@ -9,6 +9,7 @@ RUN apt-get update && apt-get install -y  build-essential r-base r-base-dev pyth
 
 COPY . ./
 # WORKDIR /app
+RUN ls
 
 RUN pip3 install -r requirements.txt
 RUN Rscript /app/rpackages_installer.R
