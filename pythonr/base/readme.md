@@ -7,4 +7,5 @@ You can run it via:
 docker run -it --rm silverstone1903/pythonr:latest
 ```
 <br>
+
 ![docker-build-push](https://github.com/silverstone1903/cloud-first-initialization/workflows/docker-build-push/badge.svg)
