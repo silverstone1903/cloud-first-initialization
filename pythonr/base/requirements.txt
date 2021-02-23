@@ -8,3 +8,5 @@ catboost
 shap
 matplotlib
 seaborn
+streamlit
+xgbfir
