@@ -1,6 +1,5 @@
 #requirements.txt
 pandas
-flask
 numpy
 lightgbm
 xgboost
@@ -14,3 +13,5 @@ fastapi
 pydantic
 scikit-learn
 scipy
+uvicorn
+tqdm
