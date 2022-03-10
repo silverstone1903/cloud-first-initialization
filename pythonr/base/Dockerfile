@@ -9,7 +9,12 @@ RUN apt-get update && apt-get install -y  build-essential r-base r-base-dev pyth
 
 COPY ./pythonr/base ./app
 WORKDIR app/
-RUN ls
+
+RUN apt-get update
+RUN apt-get install -y locales locales-all
+ENV LC_ALL en_US.UTF-8
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US.UTF-8
 
 RUN pip3 install -r requirements.txt
 RUN Rscript rpackages_installer.R
