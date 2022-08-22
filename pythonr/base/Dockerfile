@@ -5,8 +5,8 @@ FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt-get update && apt-get install -y  build-essential r-base r-base-dev python3.6 python3-pip python3-setuptools python3-dev nano libcurl4-openssl-dev libssl-dev libxml2-dev pandoc git
-RUN apt-get update && apt-get install libpq5 -y
+RUN apt-get update && apt-get install -y build-essential r-base r-base-dev python3.6 python3-pip python3-setuptools python3-dev nano libcurl4-openssl-dev libssl-dev libxml2-dev pandoc git
+RUN apt-get update && apt-get install libpq5 libpq-dev -y
 COPY ./pythonr/base ./app
 WORKDIR app/
 
